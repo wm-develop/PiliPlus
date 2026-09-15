@@ -21,7 +21,7 @@ version: 2.1.4+6061
 
 environment:
   sdk: ">=3.11.1"
-  flutter: ">=3.41.9" # match installed OHOS SDK
+  flutter: ">=3.44.9" # match installed OHOS SDK
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -37,7 +37,7 @@ dependencies:
     sdk: flutter
 
   # Flutter 3.47 起 Material/Cupertino 被拆成独立 pub 包，上上游已全量迁移。
-  # 鸿蒙 fork 仍在 3.41，这里用仓库内的本地 shim 把这两个包名映射回 SDK 内置
+  # 鸿蒙 fork 仍在 3.44，这里用仓库内的本地 shim 把这两个包名映射回 SDK 内置
   # 实现，从而可以原样接受上游的 import 写法（详见 packages/*/pubspec.yaml）。
   # 鸿蒙升到 3.47 后改回 `^1.0.0` 并删掉 packages/ 下两个目录即可。
   material_ui:
@@ -105,7 +105,10 @@ dependencies:
   # 下拉刷新
   # pull_to_refresh_notification: ^3.1.0
   # 图标
-  font_awesome_flutter: 10.9.0
+  font_awesome_flutter:
+    git:
+      url: https://github.com/bggRGjQaUbCoE/font_awesome_flutter.git
+      ref: v10.9.0
   # material_design_icons_flutter: ^7.0.7296
   material_design_icons_flutter:
     git:
@@ -383,7 +386,10 @@ dependency_overrides:
       url: https://github.com/My-Responsitories/media-kit.git
       path: libs/windows/media_kit_libs_windows_video
       ref: version_1.2.5
-  font_awesome_flutter: 10.9.0
+  font_awesome_flutter:
+    git:
+      url: https://github.com/bggRGjQaUbCoE/font_awesome_flutter.git
+      ref: v10.9.0
   image_picker:
     git:
       url: https://gitcode.com/CPF-Flutter/flutter_packages.git
